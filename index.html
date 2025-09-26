@@ -1,54 +1,181 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cashup Card — Instant Uplift Virtual Cards</title><meta name="description" content="Cashup Card issues instant uplift virtual prepaid cards. Simple, instant, AI-powered."><style>
-:root{--bg:#F8FAFC;--surface:#FFFFFF;--text:#111827;--muted:#6B7280;--primary:#0066FF;--secondary:#00CC88;--border:#E5E7EB;--radius-lg:18px;--shadow-sm:0 6px 18px rgba(0,0,0,.06);--container:1200px}
-*{box-sizing:border-box}html,body{margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}p{margin:0 0 12px}
-h1,h2,h3,h4{margin:0 0 10px;line-height:1.15}h1{font-size:42px}h2{font-size:34px}h3{font-size:26px}h4{font-size:18px}
-.container{max-width:var(--container);margin:0 auto;padding:0 20px}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.grid-2-even{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-@media (max-width:960px){.grid-2,.grid-3,.grid-2-even{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}h3{font-size:22px}}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border)}
-header .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.logo{display:flex;align-items:center;gap:10px}.logo .mark{width:36px;height:36px;border-radius:10px;background:#111827}.logo .name{font-weight:700}
-nav a{font-size:14px;color:#334155;margin-left:22px}nav a:hover{color:#0f172a}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:14px;border:0;cursor:pointer;font-weight:600;transition:transform .04s ease,filter .15s ease,box-shadow .2s ease;box-shadow:0 6px 14px rgba(0,0,0,.08)}
-.btn:active{transform:translateY(1px)}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{filter:brightness(1.05)}
-.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border)}.btn-ghost:hover{background:#F3F4F6}
-.btn-merchant{background:var(--secondary);color:#003320}.btn-merchant:hover{filter:brightness(1.06)}
-.hero{background:radial-gradient(1200px 600px at 80% -10%, rgba(0,102,255,.20), transparent 60%),radial-gradient(900px 450px at -10% 0%, rgba(0,204,136,.18), transparent 60%);border-bottom:1px solid var(--border)}
-.hero .illustration{aspect-ratio:4/3;border:1px solid var(--border);border-radius:24px;background:linear-gradient(180deg,#fff,#F3F4F6);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;padding:24px}
-.placeholder-card{width:220px;height:120px;border-radius:16px;background:#fff;border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.08);margin:0 auto 14px}
-.muted{color:var(--muted);font-size:14px}
-.countdown{border-bottom:1px solid var(--border);background:#fff}
-.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
-.count-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm)}
-.count-num{font-weight:800;font-size:44px}.count-label{margin-top:6px;text-transform:uppercase;font-size:11px;letter-spacing:.08em;color:#6B7280}
-@media (max-width:560px){.count-grid{grid-template-columns:repeat(2,1fr)}}
-section.strip{border-bottom:1px solid var(--border);background:#fff}
-blockquote.quote{background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow-sm);padding:18px;color:#374151}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow-sm);padding:22px}
-.card h4{font-weight:700}.card p{color:#374151}
-footer{background:#111827;color:#E5E7EB;margin-top:12px}
-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:22px}
-footer .cols a:hover{text-decoration:underline}
-footer small{display:block;text-align:center;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);color:#94A3B8}
-@media (max-width:960px){footer .cols{grid-template-columns:1fr}}
-</style></head><body>
-<header><div class="container bar"><a class="logo" href="#"><div class="mark"></div><div class="name">Cashup Card</div></a><nav><a href="#countdown">Launch</a><a href="#testimonials">What people say</a><a href="#features">How it works</a><a href="#join">Get started</a></nav></div></header>
-<section class="hero"><div class="container" style="padding:64px 0"><div class="grid-2"><div>
-<h1>Imagine loading $80 into an app and instantly seeing a balance of $100.</h1>
-<div style="margin-top:16px;max-width:640px"><p>Cashup Card issues instant uplift virtual prepaid cards. No coupons. No delayed cashback. No empty promises — just real money, available immediately at checkout in your local grocery store or pet shop.</p><p>Promotions today are outdated. Cashup Card changes the rules. This is the future of financial growth infrastructure: simple, instant, AI-powered. Not just fintech that moves money — Cashup moves people, businesses, and communities forward.</p></div>
-<div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button id="btn-users" class="btn btn-primary">Users – Join the Pilot</button><button id="btn-merchants" class="btn btn-merchant">Merchants – Apply as a Merchant</button></div>
-</div><div class="illustration"><div style="text-align:center"><div class="placeholder-card"></div><div class="muted">Cashup-branded hero illustration placeholder</div></div></div></div></div></section>
-<section id="countdown" class="countdown"><div class="container" style="padding:56px 0"><div class="grid-2" style="align-items:center"><div style="order:2"><h2>The launch is coming.</h2><div style="margin-top:12px"><p>Cashup Card goes live on <strong>August 31, 2026</strong>. The countdown is fixed — it never resets. Every visit shows the same official launch date.</p><p>Be among the first to unlock instant uplift cards when the timer hits zero.</p></div><div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="document.getElementById('btn-users').click()">Users – Join the Pilot</button><button class="btn btn-ghost" onclick="document.getElementById('btn-merchants').click()">Merchants – Apply as a Merchant</button></div></div><div style="order:1"><div class="count-grid"><div class="count-card"><div id="dd" class="count-num">00</div><div class="count-label">Days</div></div><div class="count-card"><div id="hh" class="count-num">00</div><div class="count-label">Hours</div></div><div class="count-card"><div id="mm" class="count-num">00</div><div class="count-label">Minutes</div></div><div class="count-card"><div id="ss" class="count-num">00</div><div class="count-label">Seconds</div></div></div></div></div></div></section>
-<section id="testimonials" class="strip"><div class="container" style="padding:56px 0"><h3>What people are already saying</h3><div class="grid-3" style="margin-top:18px"><blockquote class="quote">“It feels like free money, but real.” — <b>Alex</b></blockquote><blockquote class="quote">“Finally something that rewards me instantly, not weeks later.” — <b>Daniel</b></blockquote><blockquote class="quote">“This could actually help me save on groceries.” — <b>Priya</b></blockquote><blockquote class="quote">“I never trust coupons, but this is different.” — <b>Sofia</b></blockquote><blockquote class="quote">“It’s simple — I don’t have to change how I pay.” — <b>Liam</b></blockquote><blockquote class="quote">“I’d actually switch my usual payment app for this.” — <b>Maria</b></blockquote><blockquote class="quote">“If pet stores accept it, I’m in.” — <b>Kevin</b></blockquote><blockquote class="quote">“It makes my budget feel bigger without extra effort.” — <b>Emma</b></blockquote><blockquote class="quote">“Way better than collecting points I forget to use.” — <b>Noah</b></blockquote></div><div style="position:absolute;left:-9999px">“Feels like fintech that finally works for me.” — Olivia</div></div></section>
-<section id="features" class="strip" style="background:#F1F5F9"><div class="container" style="padding:64px 0"><h3>How Cashup Card works</h3><div class="grid-3" style="margin-top:18px"><div class="card"><h4>Instant Uplift Cards</h4><p style="margin-top:8px">Each Drop or QR release comes with a limited number of cards per cluster…</p><p>Join the waitlist… two in-app value pop-ups automatically…</p></div><div class="card"><h4>Real-Time Checkout Value</h4><p style="margin-top:8px">See the uplift apply instantly…</p><p>Spend fractionally across grocery/pet.</p></div><div class="card"><h4>For Local Businesses</h4><p style="margin-top:8px">Drops are capped per cluster…</p><p>Simple APIs, H3 res 5/6 clusters, no upfront cost; small commission only on redeem.</p></div><div class="card"><h4>AI-Powered Platform</h4><p style="margin-top:8px">Virtual cards; no upfront fees; AI clusters; Ad Automation; fraud detection; live analytics; modular scaling.</p></div><div class="card"><h4>Local Growth Engine</h4><p style="margin-top:8px">Engagement where people shop; keep value local; win–win users/shops.</p></div><div class="card"><h4>Future Vision</h4><p style="margin-top:8px">Scales to new categories/regions; long-term infra.</p></div></div></div></section>
-<section id="join" class="strip"><div class="container" style="padding:56px 0"><h3>Ready to join?</h3><div class="grid-2-even" style="margin-top:18px"><div class="card panel"><h4>For Users</h4><p>Availability is limited per area — early access recommended.</p><div style="margin-top:12px"><button class="btn btn-primary" onclick="document.getElementById('btn-users').click()">Join the Pilot</button></div></div><div class="card panel"><h4>For Merchants</h4><p>No upfront cost. Commission only when value is redeemed in-store.</p><div style="margin-top:12px"><button class="btn btn-merchant" onclick="document.getElementById('btn-merchants').click()">Apply as a Merchant</button></div></div></div></div></section>
-<footer><div class="container" style="padding:28px 0"><div class="cols"><div><div class="logo"><div class="mark" style="background:#fff"></div><div class="name" style="color:#fff">Cashup Card</div></div><p class="muted" style="color:#94A3B8;margin-top:10px">Cashup Card is a fintech pilot launching in Toronto &amp; GTA.</p></div><div><h4 style="color:#fff">Legal</h4><div style="margin-top:10px;display:flex;flex-direction:column;gap:8px"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Contact</a></div></div><div><h4 style="color:#fff">Follow</h4><div style="margin-top:10px;display:flex;flex-direction:column;gap:8px"><a href="#">X</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Facebook</a></div></div></div></div><small>© Cashup Card. All rights reserved.</small></footer>
-<script>
-const targetISO="2026-08-31T00:00:00-04:00";
-function updateCountdown(){const t=new Date(targetISO).getTime(),n=Date.now();let d=Math.max(0,t-n);const dd=Math.floor(d/86400000);d-=dd*86400000;const hh=Math.floor(d/3600000);d-=hh*3600000;const mm=Math.floor(d/60000);d-=mm*60000;const ss=Math.floor(d/1000);for(const [k,v] of Object.entries({dd,hh,mm,ss})){const el=document.getElementById(k);if(el)el.textContent=String(v).padStart(2,"0")}}
-setInterval(updateCountdown,1000);updateCountdown();
-document.getElementById('btn-users')?.addEventListener('click',()=>{window.location.href='users.html'});
-document.getElementById('btn-merchants')?.addEventListener('click',()=>{window.location.href='merchants.html'});
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cashup Card — Instant Uplift Virtual Cards</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0B0F14; --text:#E6EDF3; --muted:#A9B4C0; --accent:#00E6A8; --accent-2:#6AE7FF;
+      --radius:16px; --shadow:0 8px 30px rgba(0,0,0,.25);
+      --space: clamp(16px, 2.5vw, 32px);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92vw);margin-inline:auto}
+    header{position:sticky;top:0;background:rgba(11,15,20,.6);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{font-weight:700;letter-spacing:.2px}
+    .nav a{opacity:.9;margin-left:18px;font-size:.95rem}
+    .sr-only{position:absolute;left:-9999px}
+    .hero{padding:calc(var(--space)*2) 0;display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space);align-items:center}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,3.2vw,44px);line-height:1.15;margin:0 0 12px}
+    p.lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);margin:0 0 var(--space)}
+    .btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-weight:600;border:1px solid transparent}
+    .btn.primary{background:var(--accent);color:#04251E}
+    .btn.secondary{border-color:rgba(255,255,255,.15)}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-art{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden}
+    .section{padding:calc(var(--space)*1.5) 0}
+    .section h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 10px}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:var(--space)}
+    @media (max-width:640px){.countdown{grid-template-columns:repeat(2,1fr)}}
+    .tick{padding:18px;text-align:center}
+    .num{font-size:clamp(26px,4.2vw,40px);font-weight:700}
+    .label{color:var(--muted);font-size:.9rem;margin-top:6px}
+    .quotes{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding-bottom:8px}
+    blockquote{margin:0;padding:14px}
+    footer{color:var(--muted);padding:40px 0;border-top:1px solid rgba(255,255,255,.06);margin-top:calc(var(--space)*2)}
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Cashup Card</div>
+        <div class="nav">
+          <a href="#launch">Launch</a>
+          <a href="#quotes">What people say</a>
+          <a href="#how">How it works</a>
+          <a href="#cta">Get started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="launch">
+      <div>
+        <h1>Imagine loading $80 and seeing $100 instantly.</h1>
+        <p class="lead">
+          Instant uplift virtual prepaid cards. No coupons. No delayed cashback. Real value at checkout in your local grocery &amp; pet stores.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="/users.html" target="_blank" rel="noopener">Users — Join the Pilot</a>
+          <a class="btn secondary" href="/merchants.html" target="_blank" rel="noopener">Business — Apply for Pilot</a>
+        </div>
+      </div>
+      <div class="hero-art card" aria-hidden="true">
+        <svg viewBox="0 0 600 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#00E6A8"/><stop offset="100%" stop-color="#6AE7FF"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="450" fill="rgba(255,255,255,.02)"/>
+          <g opacity=".9">
+            <circle cx="160" cy="160" r="120" fill="url(#g1)"/>
+            <circle cx="420" cy="260" r="160" fill="rgba(106,231,255,.35)"/>
+            <circle cx="300" cy="120" r="80" fill="rgba(0,230,168,.35)"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The launch is coming.</h2>
+      <p class="lead">We go live on <strong>August 31, 2026</strong> (fixed date). The timer below never resets.</p>
+      <div class="countdown" role="group" aria-label="Countdown to August 31, 2026">
+        <div class="tick card"><div class="num" id="dd">00</div><div class="label">Days</div></div>
+        <div class="tick card"><div class="num" id="hh">00</div><div class="label">Hours</div></div>
+        <div class="tick card"><div class="num" id="mm">00</div><div class="label">Minutes</div></div>
+        <div class="tick card"><div class="num" id="ss">00</div><div class="label">Seconds</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="quotes">
+      <h2>What people are already saying</h2>
+      <div class="quotes">
+        <blockquote class="card">“It feels like free money, but real.” — Alex</blockquote>
+        <blockquote class="card">“Finally something that rewards me instantly.” — Daniel</blockquote>
+        <blockquote class="card">“This could help me save on groceries.” — Priya</blockquote>
+        <blockquote class="card">“I never trust coupons; this is different.” — Sofia</blockquote>
+        <blockquote class="card">“I’d switch my usual payment app for this.” — Maria</blockquote>
+        <blockquote class="card">“My budget feels bigger without effort.” — Emma</blockquote>
+        <blockquote class="card">“Way better than points I forget to use.” — Noah</blockquote>
+        <blockquote class="card">“Fintech that finally works for me.” — Olivia</blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <h2>How Cashup Card works</h2>
+      <h3>Instant uplift cards</h3>
+      <p class="lead">Each Drop or QR release has <strong>limited cards per cluster</strong>. Join the waitlist; value applies instantly at checkout.</p>
+      <h3>Real-time checkout value</h3>
+      <p class="lead">See uplift apply immediately. Spend fractionally across grocery &amp; pet.</p>
+      <h3>For local businesses</h3>
+      <p class="lead">Drops are <strong>capped per cluster</strong> to avoid overflow. Simple APIs, H3 res 5/6 clusters, no upfront fee; small commission on redeem.</p>
+      <h3>AI-powered platform</h3>
+      <p class="lead">Virtual cards, AI clusters, Ad Automation, fraud detection, live analytics, modular scaling.</p>
+      <h3>Local growth engine</h3>
+      <p class="lead">Engagement where people shop; value stays local — win-win for users &amp; merchants.</p>
+      <h3>Future vision</h3>
+      <p class="lead">Scales to new categories &amp; regions; long-term infrastructure.</p>
+    </section>
+
+    <section class="section" id="cta">
+      <h2>Ready to join?</h2>
+      <div class="card" style="padding:var(--space);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <p class="lead" style="margin:0">Availability is limited per area. Early access recommended.</p>
+        <div class="btns">
+          <a class="btn primary" href="/users.html" target="_blank" rel="noopener">Users — Join the Pilot</a>
+          <a class="btn secondary" href="/merchants.html" target="_blank" rel="noopener">Business — Apply for Pilot</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div>Cashup Card — fintech pilot launching in Toronto &amp; GTA.</div>
+      <div style="margin-top:8px">
+        <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a> ·
+        <a href="/terms.html" target="_blank" rel="noopener">Terms</a> ·
+        <a href="/contact.html" target="_blank" rel="noopener">Contact</a>
+      </div>
+      <div style="margin-top:8px">
+        <a href="https://x.com" target="_blank" rel="noopener">X</a> ·
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> ·
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div style="margin-top:8px">© Cashup Card. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    const deadlineISO = "2026-08-31T00:00:00-04:00";
+    const $ = id => document.getElementById(id);
+    function pad(n){ return String(n).padStart(2,"0"); }
+    function tick(){
+      const now = new Date();
+      const end = new Date(deadlineISO);
+      const diff = Math.max(0, end - now);
+      const s = Math.floor(diff/1000)%60;
+      const m = Math.floor(diff/60000)%60;
+      const h = Math.floor(diff/3600000)%24;
+      const d = Math.floor(diff/86400000);
+      $("dd").textContent = pad(d);
+      $("hh").textContent = pad(h);
+      $("mm").textContent = pad(m);
+      $("ss").textContent = pad(s);
+      requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
+</body>
+</html>
