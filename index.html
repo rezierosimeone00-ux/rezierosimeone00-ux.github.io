@@ -8,99 +8,65 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-store, max-age=0"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
 <style>
-:root{
-  --bg:#0B0F14; --ink:#E6EDF3; --muted:#A9B4C0; --accent:#00E6A8; --accent2:#6AE7FF;
-  --pink:#FF7EB6; --pink-100:#FFD4EA;
-  --card: rgba(255,255,255,.04); --line: rgba(255,255,255,.10); --radius:22px;
-  --shadow:0 16px 40px rgba(0,0,0,.35);
-  --space:clamp(16px,2.4vw,32px);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#f6f8fb;color:#0a0f14;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-.container{width:min(1200px,94vw);margin-inline:auto}
+  :root{
+    --ink:#0B0F14; --bg:#f6f8fb; --muted:#5b6776; --soft:#e7edf3;
+    --dark:#000; --white:#fff;
+    --accent:#00E6A8; --accent2:#6AE7FF;
+    --radius:22px; --shadow:0 16px 40px rgba(0,0,0,.35);
+    --space:clamp(16px,2.6vw,32px);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .container{width:min(1200px,94vw);margin-inline:auto}
 
-/* HERO (nero) */
-.hero-wrap{background:#000;padding:72px 0 32px;border-radius:24px;margin:18px auto; width:min(1220px,96vw)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,3vw,36px);align-items:center}
-@media (max-width:920px){.hero{grid-template-columns:1fr}}
-.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
-.logo-mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-h1{color:#fff;font-size:clamp(36px,5.4vw,64px);line-height:1.05;margin:8px 0 10px}
-.lead{color:#cbd5e1;font-size:clamp(16px,1.6vw,18px);margin:0 0 22px}
-.btnrow{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:700;border:1px solid transparent}
-.btn.primary{background:var(--accent);color:#03281f}
-.btn.ghost{border-color:#2c2c2c;color:#fff;background:#0d0d0d}
-.hero-art{border-radius:20px;overflow:hidden;background:radial-gradient(120% 120% at 20% 10%, rgba(106,231,255,.25), transparent 55%),radial-gradient(120% 120% at 80% 90%, rgba(0,230,168,.25), transparent 55%); box-shadow:var(--shadow); min-height:360px}
+  /* HERO (stile template) */
+  .hero-wrap{background:var(--dark);color:#fff;padding:72px 0 36px;border-radius:24px;margin:18px auto;width:min(1220px,96vw)}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,3vw,36px);align-items:center}
+  @media (max-width:920px){.hero{grid-template-columns:1fr}}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+  .logo-mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  h1{font-size:clamp(36px,5.2vw,62px);line-height:1.05;margin:8px 0 12px}
+  .lead{color:#cbd5e1;font-size:clamp(16px,1.6vw,18px);margin:0 0 10px}
+  .hero-art{border-radius:20px;overflow:hidden;background:
+    radial-gradient(120% 120% at 20% 10%, rgba(106,231,255,.25), transparent 55%),
+    radial-gradient(120% 120% at 80% 90%, rgba(0,230,168,.25), transparent 55%);
+    box-shadow:var(--shadow);min-height:360px}
+  .bar{height:14px;margin:0 auto;width:min(1220px,96vw);border-radius:0 0 24px 24px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 
-/* Barra gradiente */
-.bar{height:14px;margin:0 auto;width:min(1220px,96vw);border-radius:0 0 24px 24px; background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  /* COUNTDOWN + BOTTONI */
+  .count-wrap{padding:var(--space) 0}
+  .count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media (max-width:640px){.count-grid{grid-template-columns:repeat(2,1fr)}}
+  .tick{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:16px;text-align:center;padding:16px;color:#fff}
+  .tick .num{font-size:clamp(26px,3.8vw,38px);font-weight:800}
+  .tick .lab{font-size:.9rem;color:#cbd5e1}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:700;border:1px solid transparent}
+  .btn.primary{background:var(--accent);color:#03281f}
+  .btn.ghost{border-color:#2c2c2c;color:#fff;background:#0d0d0d}
 
-/* Countdown dentro il hero footer */
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
-.tick{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;text-align:center;padding:14px;color:#fff}
-.tick .num{font-size:clamp(24px,3.8vw,36px);font-weight:800}
-.tick .lab{font-size:.9rem;color:#cbd5e1}
+  /* SEZIONI */
+  .section{padding:clamp(36px,6vw,80px) 0}
+  .section h2{font-size:clamp(28px,3vw,42px);line-height:1.15;margin:0 0 10px}
+  .muted{color:#5b6776}
+  .card{background:#fff;border:1px solid #e6ecf2;border-radius:18px;box-shadow:0 10px 30px rgba(12,20,31,.06);padding:22px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,24px)}
+  @media (max-width:980px){.split{grid-template-columns:1fr}}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,24px)}
+  @media (max-width:980px){.pair{grid-template-columns:1fr}}
+  .scroll-h{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding-bottom:8px}
 
-/* Sezione immagine grande con frame */
-.frame{background:#fff;border-radius:26px;box-shadow:0 10px 40px rgba(12,20,31,.10);padding:10px}
-.frame .inner{border-radius:18px;overflow:hidden;min-height:320px;background:linear-gradient(120deg,#b5f6e6,#cbe8ff,#f8c8e4)}
+  /* Banda scura per le quotes */
+  .darkband{background:#000;color:#fff;padding:clamp(40px,6vw,80px) 0}
+  blockquote{margin:0;padding:16px;border-radius:16px;background:#0f0f0f;border:1px solid #191919}
 
-/* Section standard */
-.section{padding:clamp(36px,6vw,80px) 0}
-.section h2{font-size:clamp(28px,3vw,42px);line-height:1.15;margin:0 0 10px}
-.section p{color:#364152}
-.split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,3vw,36px);align-items:center}
-@media (max-width:980px){.split{grid-template-columns:1fr}}
-
-/* Card feature */
-.card{background:#fff;border:1px solid #e6ecf2;border-radius:18px;box-shadow:0 8px 30px rgba(12,20,31,.06);padding:20px}
-.card.dark{background:#0b1520;border-color:#102131;color:#e9f0f6}
-.feature-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(16px,2.8vw,28px)}
-@media (max-width:980px){.feature-grid{grid-template-columns:1fr}}
-.card .k{font-weight:800}
-
-/* Sezione nera "Streamline" */
-.darkband{background:#000;color:#fff;padding:clamp(40px,6vw,80px) 0}
-.darkband h2{margin:0 0 20px}
-.iconrow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-@media (max-width:900px){.iconrow{grid-template-columns:repeat(2,1fr)}}
-.icon{background:#0f0f0f;border:1px solid #222;border-radius:16px;padding:14px;text-align:center}
-.icon .dot{width:54px;height:54px;border-radius:14px;margin:0 auto 10px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-
-/* "Pricing" rosa */
-.pricing{background:#ffd0e6}
-.pricing h2{margin:0 0 18px}
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media (max-width:1080px){.tiers{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.tiers{grid-template-columns:1fr}}
-.tier{background:#fff;border:1px solid #f0c9e1;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(12,20,31,.07)}
-.tier h3{margin:0 0 6px}
-.price{font-weight:800}
-.tier ul{margin:10px 0 0;padding-left:18px}
-.tier .btn{margin-top:12px}
-
-/* CTA finale */
-.cta{background:#000;color:#fff}
-.cta .wrap{display:grid;grid-template-columns:1fr .8fr;gap:clamp(18px,3vw,36px);align-items:center}
-@media (max-width:920px){.cta .wrap{grid-template-columns:1fr}}
-.cta-ill{min-height:240px;border-radius:18px;overflow:hidden;background:
-  radial-gradient(120% 120% at 30% 20%, rgba(255,255,0,.15), transparent 55%),
-  radial-gradient(120% 120% at 70% 80%, rgba(0,230,168,.25), transparent 55%)
-}
-
-/* Footer */
-footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.social{display:flex;gap:14px}
-.social a{display:inline-block;padding:8px 10px;border-radius:10px;background:#0f0f0f;border:1px solid #1f1f1f}
-.small{font-size:.92rem;color:#9fb0bf}
-
-/* Utils */
-.center{text-align:center}
-.mt-6{margin-top:32px}
+  /* Footer */
+  footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414}
+  .footer-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .social{display:flex;gap:14px}
+  .social a{display:inline-block;padding:8px 10px;border-radius:10px;background:#0f0f0f;border:1px solid #1f1f1f}
 </style>
 </head>
 <body>
@@ -110,21 +76,13 @@ footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414
   <div class="container hero">
     <div>
       <div class="logo"><div class="logo-mark"></div><div>Cashup Card</div></div>
-      <h1>Tech shouldn’t feel foreign.<br>It should feel like <em>instant value</em>.</h1>
-      <p class="lead">Imagine loading <strong>$80</strong> and seeing <strong>$100 instantly</strong>. Cashup issues instant-uplift virtual prepaid cards—no coupons, no delayed cashback. Real value at checkout across grocery &amp; pet.</p>
-      <div class="btnrow">
-        <a class="btn primary" href="/users.html" target="_blank" rel="noopener">Users — Join the Pilot</a>
-        <a class="btn ghost"   href="/merchants.html" target="_blank" rel="noopener">Business — Apply for Pilot</a>
-      </div>
-      <div class="count">
-        <div class="tick"><div class="num" id="d">00</div><div class="lab">Days</div></div>
-        <div class="tick"><div class="num" id="h">00</div><div class="lab">Hours</div></div>
-        <div class="tick"><div class="num" id="m">00</div><div class="lab">Minutes</div></div>
-        <div class="tick"><div class="num" id="s">00</div><div class="lab">Seconds</div></div>
-      </div>
+      <h1>Imagine loading $80 into an app and instantly seeing a balance of $100.</h1>
+      <p class="lead">Our AI-driven fintech system issues instant uplift virtual prepaid cards. No coupons. No delayed cashback. No empty promises — real money, available immediately at the checkout of your local grocery store or pet shop.</p>
+      <p class="lead">Promotions today are outdated. Cashup Card changes the rules.</p>
+      <p class="lead">We are building the future of financial growth infrastructure: simple, instant, AI-powered. This is not just fintech that moves money. Cashup moves people, businesses, and communities forward.</p>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <!-- illustrazione astratta inline -->
+      <!-- illustrazione astratta inline (leggera) -->
       <svg viewBox="0 0 600 420" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#00E6A8"/><stop offset="100%" stop-color="#6AE7FF"/></linearGradient></defs>
@@ -137,130 +95,170 @@ footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414
       </svg>
     </div>
   </div>
+
+  <!-- COUNTDOWN + BOTTONI -->
+  <div class="container count-wrap">
+    <div style="display:inline-block;padding:6px 10px;border-radius:999px;background:#eef7ff;border:1px solid #d8e8ff;color:#0b2a3a;font-weight:600;font-size:.9rem">
+      Launch date fixed: Aug 31, 2026 — timer never resets
+    </div>
+    <div class="count-grid" style="margin-top:12px">
+      <div class="tick"><div class="num" id="cd_d">00</div><div class="lab">Days</div></div>
+      <div class="tick"><div class="num" id="cd_h">00</div><div class="lab">Hours</div></div>
+      <div class="tick"><div class="num" id="cd_m">00</div><div class="lab">Minutes</div></div>
+      <div class="tick"><div class="num" id="cd_s">00</div><div class="lab">Seconds</div></div>
+    </div>
+    <div class="btnrow">
+      <a class="btn primary" href="#forms-users">Users — Join the Pilot</a>
+      <a class="btn ghost"   href="#forms-merchants">Merchants — Apply</a>
+    </div>
+  </div>
 </div>
 <div class="bar"></div>
 
-<!-- FRAME IMG SECTION -->
-<section class="section">
-  <div class="container frame">
-    <div class="inner"></div>
-  </div>
-</section>
-
-<!-- COPY + IMG (two-col) -->
-<section class="section">
-  <div class="container split">
-    <div>
-      <h2>Innovate with ease on our all-in-one platform</h2>
-      <p>Each Drop or QR release comes with a <strong>limited number of cards per cluster</strong>. Join the waitlist and get instant uplift at checkout. No points, no friction.</p>
-      <p>Merchants get capped drops per H3 cluster to avoid overflow, simple APIs, and only pay a small commission on redeemed value.</p>
-    </div>
-    <div class="card" style="background:linear-gradient(120deg,#b5f6e6,#cbe8ff,#f8c8e4)">
-      <div style="aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:#fff;display:grid;place-items:center">
-        <div style="width:72%;height:72%;border-radius:50%;background:conic-gradient(from 0deg, #00E6A8, #6AE7FF, #FF7EB6)"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES (card sinistra immagine destra card) -->
-<section class="section">
-  <div class="container feature-grid">
-    <div class="card dark">
-      <h3>Seamless integrations</h3>
-      <p class="small">Connect with POS/payment providers easily. Minimal dev time, maximum reach.</p>
-      <h3>Intuitive interface</h3>
-      <p class="small">Clean UX for users and lightweight dashboards for merchants.</p>
-      <h3>Excellent support</h3>
-      <p class="small">We’re hands-on during pilot: onboarding, analytics, and drop tuning.</p>
-    </div>
-    <div class="card">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div class="card" style="background:#f3fbf9;border-color:#dbf3ec"><div class="k">Instant uplift</div><div class="small">Real value now.</div></div>
-        <div class="card" style="background:#f2f8ff;border-color:#dbe9ff"><div class="k">Ad Automation</div><div class="small">Target + measure.</div></div>
-        <div class="card" style="background:#fff5fb;border-color:#ffd8ef"><div class="k">Fraud controls</div><div class="small">Rules + signals.</div></div>
-        <div class="card" style="background:#fff;border-color:#e6ecf2"><div class="k">Modular scaling</div><div class="small">Rollout by cluster.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STREAMLINE (nero) -->
-<section class="darkband">
+<!-- FORMS SUMMARY -->
+<section id="forms" class="section">
   <div class="container">
-    <h2>Streamline your growth with Cashup solutions</h2>
-    <div class="iconrow">
-      <div class="icon"><div class="dot"></div><div>Instant Cards</div></div>
-      <div class="icon"><div class="dot"></div><div>Drop Engine</div></div>
-      <div class="icon"><div class="dot"></div><div>H3 Clusters</div></div>
-      <div class="icon"><div class="dot"></div><div>Analytics</div></div>
-      <div class="icon"><div class="dot"></div><div>Fraud Guard</div></div>
+    <h2>Final Forms Summary</h2>
+
+    <div id="forms-users" class="card" style="margin-top:14px">
+      <h3>🔹 Users – Join the Pilot</h3>
+      <p class="muted">Note: card availability in each Drop is limited within your area — early access is recommended.</p>
+      <h4>Mandatory fields (Step 1 – quick sign-up)</h4>
+      <ol>
+        <li>Email — verified via OTP / magic link</li>
+        <li>Province/Area — restricted to Toronto &amp; GTA only (postal codes outside this area are not accepted)</li>
+        <li>Postal/ZIP code — validation for Toronto &amp; GTA</li>
+        <li>Usage preference — Grocery / Pet / Both</li>
+        <li>Accept Terms &amp; Privacy Policy — required checkbox</li>
+        <li>Consent to communications — required checkbox</li>
+      </ol>
+      <h4>Optional fields (Step 2 – priority boost)</h4>
+      <ol start="7">
+        <li>Main device — iOS / Android</li>
+        <li>Referral code</li>
+        <li>How did you hear about us? — menu (X, TikTok, IG, Friend, Other)</li>
+        <li>Willingness to answer 1–2 surveys/month — Yes/No</li>
+      </ol>
+      <p><strong>Outcome:</strong> “Thanks ✅” confirmation + email with fixed launch countdown (31.08.2026).</p>
+    </div>
+
+    <div id="forms-merchants" class="card" style="margin-top:18px">
+      <h3>🔹 Merchants – Apply as a Merchant</h3>
+      <h4>Mandatory fields</h4>
+      <ol>
+        <li>Business legal name</li>
+        <li>Brand/DBA</li>
+        <li>Category — Grocery / Pet / Both / Other</li>
+        <li># Locations — number + (optional) city list</li>
+        <li>Head office address — city, province/state, postal/ZIP</li>
+        <li>Website or social link</li>
+        <li>Work email — business domain preferred</li>
+        <li>Desired go-live timeframe — 30 / 60 / 90 days</li>
+        <li>Accept Terms &amp; Privacy Policy — required checkbox</li>
+      </ol>
+      <h4>Optional field</h4>
+      <ol start="17">
+        <li>Logo upload</li>
+      </ol>
+      <p><strong>Outcome:</strong> “Your application is under review ✅” + follow-up email with next steps (KYB and integration checklist).</p>
     </div>
   </div>
 </section>
 
-<!-- PRICING-LIKE (rosa) – usiamo “Pilot access” -->
-<section class="section pricing">
+<!-- USER REACTIONS -->
+<section class="darkband" id="reactions">
   <div class="container">
-    <h2>Choose the access that suits your needs</h2>
-    <p class="small">Pilot is free for users. Businesses apply to join capped clusters; no upfront fee, commission only on redeemed value.</p>
-    <div class="tiers">
-      <div class="tier">
-        <h3>User — Starter</h3>
-        <div class="price">$0 / pilot</div>
-        <ul>
-          <li>Instant uplift at checkout</li><li>Limited cards per area</li><li>Mobile-first onboarding</li>
-        </ul>
-        <a class="btn primary" href="/users.html" target="_blank" rel="noopener">Join Pilot</a>
-      </div>
-      <div class="tier">
-        <h3>Business — Local</h3>
-        <div class="price">$0 setup</div>
-        <ul>
-          <li>Capped drops per cluster</li><li>Simple POS integration</li><li>Pay on redemption only</li>
-        </ul>
-        <a class="btn ghost" href="/merchants.html" target="_blank" rel="noopener">Apply</a>
-      </div>
-      <div class="tier">
-        <h3>Business — Multi-site</h3>
-        <div class="price">Custom</div>
-        <ul>
-          <li>Multi-cluster coverage</li><li>Reporting &amp; analytics</li><li>Co-marketing options</li>
-        </ul>
-        <a class="btn ghost" href="/merchants.html" target="_blank" rel="noopener">Apply</a>
-      </div>
-      <div class="tier">
-        <h3>Partner / Investor</h3>
-        <div class="price">Intro</div>
-        <ul>
-          <li>Pilot oversight</li><li>Data room access</li><li>Roadmap briefings</li>
-        </ul>
-        <a class="btn ghost" href="/contact.html">Contact</a>
-      </div>
+    <h2 style="margin:0 0 16px">What people are already saying</h2>
+    <div class="scroll-h">
+      <blockquote>“It feels like free money, but real.” — Alex</blockquote>
+      <blockquote>“Finally something that rewards me instantly, not weeks later.” — Daniel</blockquote>
+      <blockquote>“This could actually help me save on groceries.” — Priya</blockquote>
+      <blockquote>“I never trust coupons, but this is different.” — Sofia</blockquote>
+      <blockquote>“It’s simple — I don’t have to change how I pay.” — Liam</blockquote>
+      <blockquote>“I’d actually switch my usual payment app for this.” — Maria</blockquote>
+      <blockquote>“If pet stores accept it, I’m in.” — Kevin</blockquote>
+      <blockquote>“It makes my budget feel bigger without extra effort.” — Emma</blockquote>
+      <blockquote>“Way better than collecting points I forget to use.” — Noah</blockquote>
+      <blockquote>“Feels like fintech that finally works for me.” — Olivia</blockquote>
     </div>
   </div>
 </section>
 
-<!-- CTA FINALE (nero) -->
-<section class="section cta">
-  <div class="container wrap">
-    <div>
-      <div class="logo"><div class="logo-mark"></div><div>Cashup Card</div></div>
-      <h2 class="mt-6">Innovate with us</h2>
-      <p class="small">Automate and simplify local growth with instant-uplift cards. Launch date is fixed: <strong>Aug 31, 2026</strong>.</p>
-      <div class="btnrow">
-        <a class="btn primary" href="/users.html" target="_blank" rel="noopener">Start today</a>
-        <a class="btn ghost" href="/merchants.html" target="_blank" rel="noopener">Business — Apply</a>
+<!-- 6 RIQUADRI (3 coppie) -->
+<section class="section" id="blocks">
+  <div class="container">
+
+    <!-- Coppia 1 -->
+    <div class="pair" style="margin-bottom:var(--space)">
+      <div class="card">
+        <h3>🟨 Riquadro 1 — Instant Uplift Cards</h3>
+        <p>Each Drop or QR release comes with a limited number of cards per cluster, making access exclusive and time-sensitive.</p>
+        <p><strong>Testo:</strong><br>
+        Join the waitlist to get the app link first. At launch, unlock extra value via geo-segmented Drops or by scanning a QR code at participating locations in your area. After you purchase your card, you’ll receive two in-app value pop-ups automatically — no drop or QR required — so your uplift will be multiplied.</p>
+      </div>
+      <div class="card">
+        <h3>Riquadro 2 — Real-Time Checkout Value</h3>
+        <p><strong>Testo:</strong><br>
+        Use your Cashup Card and see the uplift apply instantly at checkout. No waiting for cashback, no chasing coupons — your balance reflects the bonus the moment you pay.<br>
+        That extra value can also be spent fractionally across multiple merchants in the same category — grocery or pet — turning every purchase into a bigger deal.</p>
       </div>
     </div>
-    <div class="cta-ill" aria-hidden="true"></div>
+
+    <!-- Coppia 2 -->
+    <div class="pair" style="margin-bottom:var(--space)">
+      <div class="card">
+        <h3>🟧 Riquadro 3 — For Local Businesses</h3>
+        <p>Drops are capped within each cluster, so stores see steady, manageable foot traffic without the risk of overflow.</p>
+        <p><strong>Testo:</strong><br>
+        Connecting is simple through APIs, while Cashup’s AI does the heavy lifting.<br>
+        Drops are geo-localized and organized into balanced clusters (built on models like H3 res 5/6) that match local population with available stores by category and sub-category.<br>
+        This means two things: users are encouraged to spend within their own area, and shops receive a steady flow of nearby customers without spending a single dollar on ads or promotions.<br>
+        All costs are covered by Cashup until a customer actually redeems in store with their card — only then does a small commission apply, tied directly to the added value received by the shopper.</p>
+      </div>
+      <div class="card">
+        <h3>🟦 Riquadro 4 — AI-Powered Platform</h3>
+        <p><strong>Testo:</strong><br>
+        Cashup blends financial innovation with advanced AI.<br>
+        With virtual cards, users load less and spend more, while businesses join with no upfront costs.<br>
+        AI organizes geo-localized Drops into local clusters, balancing people and stores so growth stays efficient and community-based.<br>
+        Our Advertising Automation Engine connects directly to these clusters, fine-tuning campaigns on social media in real time.<br>
+        Built-in fraud detection spots unusual patterns early, keeping every transaction safe.<br>
+        Live analytics constantly improve the system, and a modular, tested architecture makes it ready to scale quickly.<br>
+        And with an experience designed for ease — onboarding in minutes, redemption in seconds — Cashup Card is built to move fast from pilot to market.</p>
+      </div>
+    </div>
+
+    <!-- Coppia 3 -->
+    <div class="pair">
+      <div class="card">
+        <h3>🟩 Riquadro 5 — Local Growth Engine</h3>
+        <p><strong>Testo:</strong><br>
+        Cashup Card builds engagement where it matters most — in the everyday places people shop.<br>
+        Through AI-driven clusters, users connect with their local store, creating a direct link between communities and commerce.<br>
+        Every card used strengthens participation: people access real value, while stores grow without upfront risk.<br>
+        By keeping value local, Cashup builds lasting engagement that benefits both sides of the transaction.</p>
+      </div>
+      <div class="card">
+        <h3>🟦 Riquadro 6 — Future Vision</h3>
+        <p><strong>Testo:</strong><br>
+        Cashup Card begins with a pilot focused on everyday essentials, but the platform is built to expand across categories and regions.<br>
+        The same AI that connects users with their local store can scale to national and international markets, adapting instantly to new data, geographies, and consumer behaviors.<br>
+        From prepaid cards to full financial services, Cashup is designed as an infrastructure for long-term growth — ready to evolve with the needs of people, businesses, and entire communities.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="container footer-row">
     <div class="logo"><div class="logo-mark"></div><div>Cashup Card</div></div>
-    <div class="btnrow"><a class="btn primary" href="/users.html" target="_blank" rel="noopener">Join the Pilot</a></div>
+    <div class="social">
+      <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a>
+      <a href="/terms.html" target="_blank" rel="noopener">Terms</a>
+      <a href="/contact.html" target="_blank" rel="noopener">Contact</a>
+    </div>
     <div class="social">
       <a href="https://x.com" target="_blank" rel="noopener">X</a>
       <a href="https://instagram.com" target="_blank" rel="noopener">IG</a>
@@ -270,7 +268,7 @@ footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414
 </footer>
 
 <script>
-  // Countdown fisso a 31/08/2026 00:00 -04:00
+  // Countdown fisso 31/08/2026 00:00 -04:00 (non si azzera al refresh)
   const END="2026-08-31T00:00:00-04:00";
   const $=id=>document.getElementById(id);
   const pad=n=>String(n).padStart(2,"0");
@@ -279,11 +277,12 @@ footer{background:#000;color:#cbd5e1;padding:28px 0;border-top:1px solid #141414
     const diff=Math.max(0,end-now);
     const s=Math.floor(diff/1000)%60, m=Math.floor(diff/60000)%60;
     const h=Math.floor(diff/3600000)%24, d=Math.floor(diff/86400000);
-    if($("d")){$("d").textContent=pad(d);$("h").textContent=pad(h);$("m").textContent=pad(m);$("s").textContent=pad(s);}
-    requestAnimationFrame(tick);
-  } tick();
+    const D=$("cd_d"),H=$("cd_h"),M=$("cd_m"),S=$("cd_s");
+    if(D){ D.textContent=pad(d); H.textContent=pad(h); M.textContent=pad(m); S.textContent=pad(s); }
+  }
+  tick(); setInterval(tick,1000);
 </script>
 </body>
 </html>
 
-<!-- template-redeploy 20250927T000432Z -->
+<!-- approved-content-redeploy 20250927T001500Z -->
